@@ -10,6 +10,10 @@ class TicTacToeGame extends StatefulWidget {
 
 class _TicTacToeGameState extends State<TicTacToeGame> {
   final List<List<String>> _board = List.generate(3, (_) => List.filled(3, ''));
+  final List<String> _players = ['X', 'O'];
+  int _currentPlayer = 0;
+
+  int getCurrentPlayerTurn() => _currentPlayer % 2;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +29,12 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
               onPressed: (row, cell) {
                 print('Celda presionada: ${_board[row][cell]}');
                 setState(() {
-                  _board[row][cell] = 'X';
+                  if (_board[row][cell] == '') {
+                    _board[row][cell] = _players[_currentPlayer % 2];
+                    _currentPlayer++;
+                  }
                 });
-              },
+              }, currentPlayer: getCurrentPlayerTurn(),
             ),
             const SizedBox(height: 100),
             ElevatedButton(

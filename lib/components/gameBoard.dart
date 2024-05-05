@@ -3,11 +3,13 @@ import "package:flutter/material.dart";
 class TicTacToeBoard extends StatelessWidget {
   final List<List<String>> board;
   final void Function(int row, int cell) onPressed;
+  final int currentPlayer;
 
   const TicTacToeBoard({
     super.key,
     required this.board,
     required this.onPressed,
+    required this.currentPlayer
   });
 
   @override
@@ -42,10 +44,10 @@ class TicTacToeBoard extends StatelessWidget {
                     onPressed: () => onPressed(row.key, cell.key),
                     child: Text(
                       cell.value,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Colors.green
+                          color: currentPlayer == 0 ? Colors.green : Colors.red,
                       ),
                     ),
                   ),

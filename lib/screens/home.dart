@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  String playerOneName = "";
+  String planerTwoName = "";
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +32,7 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left,
                 ),
                 const SizedBox(height: 10),
-                const TextField(
+                TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Nombre del Jugador Uno',
@@ -30,6 +41,11 @@ class Home extends StatelessWidget {
                       maxHeight: 40,
                     ),
                   ),
+                  onChanged: (name) {
+                    setState(() {
+                      playerOneName = name;
+                    });
+                  } ,
                 ),
                 const SizedBox(height: 30),
                 const Text(
@@ -38,7 +54,7 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left
                 ),
                 const SizedBox(height: 10),
-                const TextField(
+                TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Nombre del Jugador Dos',
@@ -47,6 +63,11 @@ class Home extends StatelessWidget {
                       maxHeight: 40,
                     ),
                   ),
+                  onChanged: (name) {
+                    setState(() {
+                      planerTwoName = name;
+                    });
+                  }
                 ),
                 const SizedBox(height: 40),
                 Center(
