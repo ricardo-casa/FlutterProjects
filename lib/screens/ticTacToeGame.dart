@@ -19,10 +19,20 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ?? <String, dynamic>{}) as Map;
     String playerOneName = arguments['name1'] ?? "Jugador 1";
+    String planerTwoName = arguments['name2'] ?? "Jugador 2";
+
+    String name = 'null';
+
+    if (_currentPlayer == 0){
+      String name = arguments['name1'] ?? "Jugador 1";
+    } else {
+      String name = arguments['name2'] ?? "Jugador 2";
+    }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Turno de: $playerOneName'),
+        title: Text('Turno de: $name'),
+
       ),
 
       body: Container(
