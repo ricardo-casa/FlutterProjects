@@ -17,10 +17,15 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ?? <String, dynamic>{}) as Map;
+      print(arguments);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Juego en curso'),
+
       ),
+
       body: Container(
           padding: const EdgeInsets.fromLTRB(20, 30, 20, 30),
           child: Column(children: [

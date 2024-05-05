@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                         textStyle: const TextStyle(fontSize: 20),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/ticTacToeBoard');
+                        Navigator.pushNamed(context, '/ticTacToeBoard', arguments: {'name1': playerOneName, 'name2':planerTwoName},);
                       },
                       child: const Text("Iniciar Juego", style: TextStyle(color: Colors.white))
                   ),
