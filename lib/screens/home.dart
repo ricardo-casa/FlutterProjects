@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                 const Image(image: AssetImage('assets/gato.jpg'), width: 130, height: 130, fit: BoxFit.cover),
                 const SizedBox(height: 100),
                 const Text(
-                    "Ingresa el nombre del jugador uno",
+                    "Ingresa jugador uno (X)",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.left,
                 ),
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                 ),
                 const SizedBox(height: 30),
                 const Text(
-                    "Ingresa el nombre del jugador dos",
+                    "Ingresa jugador dos (O)",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.left
                 ),
