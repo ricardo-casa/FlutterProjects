@@ -30,14 +30,17 @@ class TicTacToeBoard extends StatelessWidget {
                       left: BorderSide(
                           color: cell.key == 0
                               ? Colors.transparent
-                              : Colors.black),
+                              : Colors.black
+                      ),
                       right: BorderSide(
                           color: cell.key == 2
                               ? Colors.transparent
-                              : Colors.black),
+                              : Colors.black
+                      ),
                       bottom: BorderSide(
                           color:
-                              row.key == 2 ? Colors.transparent : Colors.black),
+                              row.key == 2 ? Colors.transparent : Colors.black
+                      ),
                     ),
                   ),
                   child: TextButton(
