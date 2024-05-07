@@ -26,7 +26,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
   int _getCurrentPlayerTurn() => _currentPlayer % 2;
 
   String _checkWinner() {
-    String currentPlayerName = _getCurrentPlayerTurn() == 0 ? playerOneName : playerTwoName;
+    String currentPlayerName = _getCurrentPlayerTurn() == 0 ? playerTwoName : playerOneName;
 
     // Verificar filas
     for (int i = 0; i < 3; i++) {
@@ -61,6 +61,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
     // Si no hay ganador
     return '';
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,4 +125,3 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
     });
   }
 }
-
